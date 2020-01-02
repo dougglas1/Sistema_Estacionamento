@@ -1,0 +1,275 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/lib/assets/img/apple-icon.png">
+    <title>
+        Black Dashboard by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- Nucleo Icons -->
+    <link href="~/lib/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="~/lib/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="~/lib/assets/demo/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navbar da Esquerda -->
+        <div class="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="javascript:void(0)" class="simple-text logo-mini">SE</a>
+                    <a href="javascript:void(0)" class="simple-text logo-normal">ESTACIONAMENTO</a>
+                </div>
+                <ul class="nav">
+                    <li class="active">
+                        <a href="javascript:void(0)">
+                            <i>
+                                <img src="~/images/Estacionamento.png" />
+                            </i>
+                            <p>Menu</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i>
+                                <img src="~/images/Indicador.png" />
+                            </i>
+                            <p>Estatísticas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i>
+                                <img src="~/images/Consulta.png" />
+                            </i>
+                            <p>Consulta</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Navbar -->
+
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+
+                        <!-- Responsável em colocar os 3 pontinhos na esquerda para ver de forma responsiva -->
+                        <div class="navbar-toggle d-inline">
+                            <button type="button" class="navbar-toggler">
+                                <span class="navbar-toggler-bar bar1"></span>
+                                <span class="navbar-toggler-bar bar2"></span>
+                                <span class="navbar-toggler-bar bar3"></span>
+                            </button>
+                        </div>
+
+                        <a class="navbar-brand" href="javascript:void(0)">Sistema Estacionamento</a>
+                    </div>
+
+                    <!-- Responsável em colocar os 3 pontinhos na direita para ver de forma responsiva-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                        <span class="navbar-toggler-bar navbar-kebab"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="search-bar input-group">
+                                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal">
+                                    <i class="tim-icons icon-zoom-split"></i>
+                                    <span class="d-lg-none d-md-block">Pesquisar</span>
+                                </button>
+                            </li>
+                            <li class="dropdown nav-item">
+                                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                    <b class="caret d-none d-lg-block d-xl-block"></b>
+                                    <p class="d-lg-none">
+                                        Saída
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu dropdown-navbar">
+                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Perfil</a></li>
+                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Configurações</a></li>
+                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Sair</a></li>
+                                </ul>
+                            </li>
+                            <li class="separator d-lg-none"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Modal para Pesquisar -->
+            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <input onkeyup="Filtrar(this.value)" type="text" class="form-control" placeholder="Pesquisar">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-chart">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-sm-6 text-left">
+                                        <h4 class="card-title">Estatísticas</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                                            <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                                                <input type="radio" name="options" checked>
+                                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Entradas Veículos</span>
+                                                <span class="d-block d-sm-none">
+                                                    <i class="tim-icons icon-delivery-fast"></i>
+                                                </span>
+                                            </label>
+                                            <label class="btn btn-sm btn-primary btn-simple" id="1">
+                                                <input type="radio" class="d-none d-sm-none" name="options">
+                                                <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Valor Agredado</span>
+                                                <span class="d-block d-sm-none">
+                                                    <i class="tim-icons icon-money-coins"></i>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="chartBig1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4 class="card-title">Veículos no Estacionamento</h4>
+                                <!-- Button to Open the Modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                    <span class="d-none d-sm-block d-md-block d-lg-block d-xl-block">Adicionar</span>
+                                    <span class="d-block d-sm-none">
+                                        <i class="tim-icons icon-notes"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table tablesorter " id="">
+                                        <thead class=" text-primary">
+                                            <tr>
+                                                <th>
+                                                    Código
+                                                </th>
+                                                <th>
+                                                    Placa
+                                                </th>
+                                                <th>
+                                                    Modelo
+                                                </th>
+                                                <th>
+                                                    Observação
+                                                </th>
+                                                <th>
+                                                    Data Entrada
+                                                </th>
+                                                <th>
+                                                    Data Saída
+                                                </th>
+                                                <th>
+                                                    Ação
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="linhas">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="copyright">
+                        ©
+                        <script>document.write(new Date().getFullYear())</script> Desenvolvido por
+                        <a href="javascript:void(0)" target="_blank">Douglas</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modal para Adicionar -->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content card">
+                <div class="modal-header">
+                    <h4 class="modal-title">Adicionar Veíuculo ao Estacionamento</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="title">Informe os campos abaixo para Adicionar no Estacionamento.</h5>
+                    <div class="form-group">
+                        <label>Placa</label>
+                        <input type="text" class="form-control" placeholder="Placa do Veículo" id="placaVeiculo">
+                    </div>
+                    <div class="form-group">
+                        <label>Modelo</label>
+                        <input type="text" class="form-control" placeholder="Modelo do Veículo" id="modeloVeiculo">
+                    </div>
+                    <div class="form-group">
+                        <label>Observação</label>
+                        <input type="text" class="form-control" placeholder="Observação do Veíuculo" id="observacao">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="salvar">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--   Core JS Files   -->
+    <script src="~/lib/assets/js/core/jquery.min.js"></script>
+    <script src="~/lib/assets/js/core/popper.min.js"></script>
+    <script src="~/lib/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/lib/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/lib/assets/js/plugins/chartjs.min.js"></script>
+    <script src="~/js/Estacionamento/index.js"></script>
+    <!-- Retirar -->
+    <script src="~/lib/assets/js/black-dashboard.min.js"></script>
+</body>
+</html>
